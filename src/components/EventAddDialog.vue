@@ -85,6 +85,13 @@ export default {
   props: {
     showDialog: Boolean
   },
+  mounted () {
+    if (!Object.keys(this.$store.getters.currentEditingEvent).length === 0) {
+      alert('this.$store.getters.currentEditingEvent is NOT empty')
+      // this.placeToAdd = this.$store.getters.currentEditingEvent
+      Object.assign(this.placeToAdd, this.$store.getters.currentEditingEvent)
+    }
+  },
   methods: {
     mapClick: function () {
       alert('map clicked')
@@ -115,6 +122,7 @@ export default {
       this.placeToAdd.Time = ''
       this.placeToAdd.isImportant = false
       store.dispatch('toggleIsAddEventDialogVisible')
+      store.dispatch('clearCurrentEditingElement')
     }
   }
 }

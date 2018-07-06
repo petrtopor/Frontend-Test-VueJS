@@ -9,7 +9,8 @@ export default new Vuex.Store(
     state:
     {
       events: [],
-      isAddEventDialogVisible: false
+      isAddEventDialogVisible: false,
+      currentEditingEvent: {}
     },
     mutations:
     {
@@ -25,6 +26,12 @@ export default new Vuex.Store(
       REMOVE_EVENT (state, event) {
         var index = state.events.indexOf(event)
         state.events.splice(index, 1)
+      },
+      SET_CURRENT_EDITING_EVENT (state, event) {
+        state.currentEditingEvent = event
+      },
+      CLEAR_CURRENT_EDITING_EVENT (state) {
+        state.currentEditingEvent = {}
       }
     },
     actions:
@@ -42,10 +49,18 @@ export default new Vuex.Store(
         context.commit('ADD_SINGLE_EVENT_MANUALLY', event)
       },
       toggleIsAddEventDialogVisible (context) {
+        // alert('toggleIsAddEventDialogVisible')
         context.commit('TOGGLE_IS_ADD_DIALOG_VISIBLE')
       },
       removeEvent (context, event) {
         context.commit('REMOVE_EVENT', event)
+      },
+      setCurrentEditingEvent (context, event) {
+        // alert('setCurrentEditingEvent')
+        context.commit('SET_CURRENT_EDITING_EVENT', event)
+      },
+      clearCurrentEditingElement (context) {
+        context.commit('CLEAR_CURRENT_EDITING_EVENT')
       }
     },
     getters:
@@ -55,6 +70,9 @@ export default new Vuex.Store(
       },
       isAddEventDialogVisible (state) {
         return state.isAddEventDialogVisible
+      },
+      currentEditingEvent (state) {
+        return state.currentEditingEvent
       }
     }
   })
