@@ -1,0 +1,55 @@
+div#add-event-dialog
+{
+  div.container
+  {
+    background-color: white;
+    color: black;
+    div
+    {
+      div
+      {
+        button#mapBtn
+        {
+          width: 30px;
+          height: 30px;
+        }
+        button#apply
+        {
+          width: 100%;
+          background-color: #a9d85f;
+          border-color: #a9d85f;
+          /* large desktops and up ----------- */
+          @media screen and (min-width: 1200px)
+          {
+            height: 38px;
+          }
+          /* Extra small devices (phones, up to 480px) */
+          @media screen and (max-width: 767px)
+          {
+            height: 20px;
+          }
+        }
+        button#cancel
+        {
+          width: 100%;
+          background-color: #ffffff;
+          border-color: #a9d85f;
+          color: #a3a3a3;
+          /* large desktops and up ----------- */
+          @media screen and (min-width: 1200px)
+          {
+            height: 38px;
+          }
+          /* Extra small devices (phones, up to 480px) */
+          @media screen and (max-width: 767px)
+          {
+            height: 20px;
+          }
+        }
+        textarea#description{
+          border-style: solid;
+        }
+      }
+    }
+  }
+}

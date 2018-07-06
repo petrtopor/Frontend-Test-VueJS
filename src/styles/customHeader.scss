@@ -1,0 +1,54 @@
+header
+{
+  margin: 0;
+  /* large desktops and up ----------- */
+  @media screen and (min-width: 1200px)
+  {
+    height: 256px;
+  }
+  /* Extra small devices (phones, up to 480px) */
+  @media screen and (max-width: 767px)
+  {
+    height: 192px;
+  }
+  padding: 0 16px 0 24px;
+  background-image: url(./../assets/headerBackground.png);
+  background-size: cover;
+  color: #ffffff;
+  div.container
+  {
+  	div.layout
+  	{
+  		div
+  		{
+  			h1
+        {
+          text-align: left;
+          /* large desktops and up ----------- */
+          @media screen and (min-width: 1200px)
+          {
+            font-size: 48px;
+          }
+          /* Extra small devices (phones, up to 480px) */
+          @media screen and (max-width: 767px)
+          {
+            font-size: 20px;
+          }
+        }
+        button
+        {
+          /* large desktops and up ----------- */
+          @media screen and (min-width: 1200px)
+          {
+            height: 48px;
+          }
+          /* Extra small devices (phones, up to 480px) */
+          @media screen and (max-width: 767px)
+          {
+            height: 48px;
+          }
+        }
+  		}
+  	}
+  }
+}
